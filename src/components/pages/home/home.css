@@ -1,0 +1,27 @@
+.Homepage {
+  text-align: center;
+  align-items: center;
+  font-family: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: calc(10px + 2vmin);
+}
+
+.Framework-link{
+  font-size: 15px;
+  color: #6ac5de;
+  font-weight: bold;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 50s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

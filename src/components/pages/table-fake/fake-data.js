@@ -1,0 +1,31 @@
+export const FAKE_COLUMNS = [
+	{ selector: (row) => row.a, name: 'Col 1', sortable: true },
+	{ selector: (row) => row.b, name: 'Col 2', sortable: true },
+	{ selector: (row) => row.c, name: 'Col 3', sortable: true },
+	{ selector: (row) => row.d, name: 'Col 4', sortable: true },
+];
+export const FAKE_DATA = [
+	{ a: 'BBB', b: 100, c: 'XXX', d: 123 },
+	{ a: 'A', b: 10, c: 'XXX', d: 123 },
+	{ a: 'CCCCC', b: 1, c: 'XXX', d: 123 },
+	{ a: 'ZZZZZZ', b: -10, c: 'XXX', d: 123 },
+	{ a: 'D', b: 10, c: 'XXX', d: 123 },
+	{ a: 'F', b: 10, c: 'XXX', d: 123 },
+	{ a: 'FFFFFFFFF', b: 10, c: 'XXX', d: 123 },
+	{ a: 'GGGGGG', b: 10, c: 'XXX', d: 123 },
+	{ a: 'S', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+	{ a: 'BBB', b: 10, c: 'XXX', d: 123 },
+];
+export const FAKE_TEXT = `Lorem ipsum dolor sit amet. Non accusantium quos nam inventore sunt in rerum corporis qui dolor cumque eos voluptatem enim et aliquam officia! Vel cumque mollitia aut aliquam consequatur eum velit rerum aut accusamus ipsum id eveniet repellat. Qui veniam culpa id natus autem aut omnis eveniet est laudantium animi quo eius iure. 33 quia voluptatum hic mollitia perferendis ut iusto sapiente et exercitationem accusantium quo suscipit galisum non sint molestias.In vitae cumque et alias voluptatem sit rerum laborum ut exercitationem perferendis ea quam libero ex voluptatem laborum. Sed adipisci quia non quos repellendus est quasi esse nam corporis alias quo eaque debitis. Qui nemo labore aut unde consequatur eos similique voluptatem et dolor nihil in iusto incidunt ut consequatur accusantium. Et suscipit soluta qui nisi voluptas et sunt velit a illo saepe non itaque galisum!Et totam dignissimos eos dolores omnis in esse rerum. Id consectetur galisum eum corrupti debitis et accusamus dolor quo modi similique! Sed dolore repudiandae rem accusantium dicta et voluptatum inventore At repellendus voluptas sed nihil consequuntur et nihil deleniti est accusantium quisquam.`;
