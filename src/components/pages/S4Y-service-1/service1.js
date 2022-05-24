@@ -10,7 +10,10 @@ import Center from './center/component';
 import Title from 'components/common/title';
 import Paper from '@mui/material/Paper';
 import Table from '../table-data';
-import { GET_NUTS_POP3 } from 'api/constants';
+import {
+	GET_POP_FROM_MUNICIPALITY,
+	GET_SCHOOLS_FROM_MUNICIPALITY,
+} from 'api/constants';
 
 const Service1 = () => {
 	const [country, setCountry] = useState('');
@@ -35,21 +38,34 @@ const Service1 = () => {
 					year={year}
 					setYear={setYear}
 				/>
-				<label>Country:{country}, isced:{isced}, mun:{mun}, year:{year}</label>
+				<label>
+					Country:{country}, isced:{isced}, mun:{mun}, year:{year}
+				</label>
 
 				<Stack spacing={1} style={{ height: '100%', width: '100%' }}>
 					<div style={{ height: '50%', width: '100%' }}>
 						<Title label="Data about the resident population" />
 						<Paper>
-							<Table endpoint={GET_NUTS_POP3} />
+							<Table
+								endpoint={GET_POP_FROM_MUNICIPALITY}
+								mun={mun}
+								setMun={setMun}
+							/>
 						</Paper>
 					</div>
 
 					<div style={{ height: '100%', width: '100%' }}>
 						<Title label="Data about Schools and Students" />
-						{/* <Paper>
-					<Table style={{ fontSize: 50 }} endpoint={GET_NUTS_POP2} />
-				</Paper> */}
+						<Paper>
+							<Table
+								endpoint={GET_SCHOOLS_FROM_MUNICIPALITY}
+								mun={mun}
+								setMun={setMun}
+								country={country}
+								year={year}
+								isced={isced}
+							/>
+						</Paper>
 					</div>
 				</Stack>
 			</Grid>

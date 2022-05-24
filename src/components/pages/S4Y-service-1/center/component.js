@@ -57,7 +57,14 @@ const Center = ({
 							<Title label="Number of schools in the selected municipality for the selected ISCED level" />
 						</div>
 
-						<Value endpoint={GET_NUMBER_SCHOOLS}></Value>
+						<Value
+							endpoint={GET_NUMBER_SCHOOLS}
+							country={country}
+							isced={isced}
+							mun={mun}
+							year={year}
+							// setYear={setYear}
+						></Value>
 					</div>
 				</Grid>
 			</Grid>

@@ -3,7 +3,7 @@ import { usePost, SEP } from '../utils';
 import {
 	nutsPop,
 	nutsPop2,
-	nutsPop3,
+	populationFromMunicipality,
 	lauAgePop,
 	nuts,
 	lau,
@@ -11,13 +11,14 @@ import {
 	schoolYears,
 	numberSchools,
 	countries,
-	isced
+	iscedValues,
+	schoolsFromMunicipality
 } from '../queries';
 
 import {
 	GET_NUTS_POP,
 	GET_NUTS_POP2,
-	GET_NUTS_POP3,
+	GET_POP_FROM_MUNICIPALITY,
 	GET_LAU_AGE_POP,
 	NUTS,
 	LAU,
@@ -25,7 +26,8 @@ import {
 	GET_SCHOOL_YEARS,
 	GET_NUMBER_SCHOOLS,
 	GET_COUNTRIES,
-	GET_ISCED
+	GET_ISCED,
+	GET_SCHOOLS_FROM_MUNICIPALITY
 } from 'api/constants';
 
 export const useFetch = (
@@ -35,15 +37,16 @@ export const useFetch = (
 	language,
 	mun2,
 	typology,
-	year
+	year,
+	isced
 ) => {
 	switch (constant) {
 		case GET_NUTS_POP:
 			return usePost(SEP)(nutsPop);
 		case GET_NUTS_POP2:
 			return usePost(SEP)(nutsPop2);
-		case GET_NUTS_POP3:
-			return usePost(SEP)(nutsPop3);
+		case GET_POP_FROM_MUNICIPALITY:
+			return usePost(SEP)(populationFromMunicipality({ mun: mun }));
 		case GET_LAU_AGE_POP:
 			return usePost(SEP)(lauAgePop({ municipality: mun }));
 		case NUTS:
@@ -57,11 +60,15 @@ export const useFetch = (
 		case GET_SCHOOL_YEARS:
 			return usePost(SEP)(schoolYears);
 		case GET_NUMBER_SCHOOLS:
-			return usePost(SEP)(numberSchools);
+			return usePost(SEP)(numberSchools({ mun: mun, country: country, isced: isced, year: year }) 
+			);
 		case GET_COUNTRIES:
 			return usePost(SEP)(countries);
 		case GET_ISCED:
-			return usePost(SEP)(isced);
+			return usePost(SEP)(iscedValues);
+		case GET_SCHOOLS_FROM_MUNICIPALITY:
+			return usePost(SEP)(schoolsFromMunicipality({ mun: mun, country: country, year: year, isced: isced }) 
+			);
 		default:
 			return null;
 	}

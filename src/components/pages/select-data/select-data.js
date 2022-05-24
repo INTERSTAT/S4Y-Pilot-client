@@ -49,7 +49,7 @@ const SelectData = ({ endpoint, country, setCountry, lang, lauFr, setLauFr, lauI
 		}
 	};
 
-	const { data, error, loading } = useFetch(endpoint, '', country, lang, '', '');
+	const { data, error, loading } = useFetch(endpoint, '', country, lang, '', '', '', '');
 
 	if (loading) return <Loader />;
 	if (error) return <Error message={error.toString()} />;
@@ -61,7 +61,7 @@ const SelectData = ({ endpoint, country, setCountry, lang, lauFr, setLauFr, lauI
 
 		<Select style={{ 
 			height: '100%', 
-			width: '90%' }} options={tableData} onChange={handleChange}/>
+			width: '90%' }} options={tableData} onChange={handleChange} getOptionValue={(option) => option.label} />
 
 		
 	);

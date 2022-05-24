@@ -1,6 +1,6 @@
 export { nutsPop } from './nuts-pop';
 export { nutsPop2 } from './nuts-pop2';
-export { nutsPop3 } from './nuts-pop3';
+export { populationFromMunicipality } from './pop-municipality';
 export { lauAgePop } from './lau-age-pop';
 export { nuts } from './nuts';
 export { lau } from './lau';
@@ -8,4 +8,5 @@ export { schoolsOnType } from './schools-on-typology';
 export { schoolYears } from './schoolYears';
 export { numberSchools } from './number-schools';
 export { countries } from './countries';
-export { isced } from './isced';
+export { iscedValues } from './iscedValues';
+export { schoolsFromMunicipality } from './schools-municipality';
