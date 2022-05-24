@@ -31,7 +31,7 @@ export const usePost = (endpoint) => (query) => {
 			.then(() => {
 				setLoading(false);
 			});
-	}, []);
+	}, [query]);
 
 	return { data, loading, error };
 };

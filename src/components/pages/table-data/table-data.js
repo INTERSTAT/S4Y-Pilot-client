@@ -26,9 +26,9 @@ const customStyles = {
 		},
 	},
 };
-
-const Table = ({ endpoint }) => {
-	const { data, error, loading } = useFetch(endpoint);
+// useFetch = (constant, mun, country, language, mun2, typology, year)
+const Table = ({ endpoint, mun, mun2, typology, year,  types, setTypes }) => {
+	const { data, error, loading } = useFetch(endpoint, mun, '', '', mun2, typology, year );
 
 	if (loading) return <Loader />;
 	if (error) return <Error message={error.toString()} />;

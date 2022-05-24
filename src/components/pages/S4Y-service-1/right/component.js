@@ -22,18 +22,18 @@ const Right = () => (
 			<Title label="Geographic area" />
 				<Selection />
 
-				<div style={{paddingLeft: '5rem' }}>
+				<div style={{paddingLeft: '5rem', textAlign: 'center' }}>
 					<Title label="Number of schools in the selected municipality for the selected ISCED level" />
 				</div>
 		
 		</div>
 
-		<div style={{ height: '50%', width: '100%' }}>
+		{/* <div style={{ height: '50%', width: '100%' }}>
 			<Title label="Data about Schools and Students" />
 			<Paper>
 				<Table endpoint={GET_NUTS_POP2} />
 			</Paper>
-		</div>
+		</div> */}
 	</>
 );
 
