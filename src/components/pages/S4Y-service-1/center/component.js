@@ -54,13 +54,12 @@ const Center = ({
 						/>
 
 						<div style={{ paddingLeft: '5rem', textAlign: 'center' }}>
-							<Title label="Number of schools in the selected municipality for the selected ISCED level" />
+							<Title label="Total number of Schools in the selected municipality" />
 						</div>
 
 						<Value
 							endpoint={GET_NUMBER_SCHOOLS}
 							country={country}
-							isced={isced}
 							mun={mun}
 							year={year}
 							// setYear={setYear}

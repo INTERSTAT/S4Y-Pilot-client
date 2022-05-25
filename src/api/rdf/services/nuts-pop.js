@@ -60,7 +60,7 @@ export const useFetch = (
 		case GET_SCHOOL_YEARS:
 			return usePost(SEP)(schoolYears);
 		case GET_NUMBER_SCHOOLS:
-			return usePost(SEP)(numberSchools({ mun: mun, country: country, isced: isced, year: year }) 
+			return usePost(SEP)(numberSchools({ mun: mun, country: country, year: year }) 
 			);
 		case GET_COUNTRIES:
 			return usePost(SEP)(countries);

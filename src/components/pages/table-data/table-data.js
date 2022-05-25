@@ -21,7 +21,7 @@ const customStyles = {
 	},
 	cells: {
 		style: {
-			fontSize: '10px',
+			fontSize: '15px',
 			paddingLeft: '0 8px',
 		},
 	},
