@@ -7,7 +7,7 @@ import Table from '../../table-data';
 import Title from 'components/common/title';
 import Grid from '@mui/material/Grid';
 import Selection from '../right/selection';
-import { GET_NUTS_POP3, GET_NUMBER_SCHOOLS } from 'api/constants';
+import { GET_NUMBER_SCHOOLS } from 'api/constants';
 import Map from './map';
 import Value from './value';
 

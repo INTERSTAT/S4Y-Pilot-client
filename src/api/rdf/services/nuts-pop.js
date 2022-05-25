@@ -12,7 +12,8 @@ import {
 	numberSchools,
 	countries,
 	iscedValues,
-	schoolsFromMunicipality
+	schoolsFromMunicipality,
+	lauByNuts
 } from '../queries';
 
 import {
@@ -27,7 +28,8 @@ import {
 	GET_NUMBER_SCHOOLS,
 	GET_COUNTRIES,
 	GET_ISCED,
-	GET_SCHOOLS_FROM_MUNICIPALITY
+	GET_SCHOOLS_FROM_MUNICIPALITY,
+	GET_LAU_FROM_NUTS
 } from 'api/constants';
 
 export const useFetch = (
@@ -38,7 +40,8 @@ export const useFetch = (
 	mun2,
 	typology,
 	year,
-	isced
+	isced,
+	nuts3Code
 ) => {
 	switch (constant) {
 		case GET_NUTS_POP:
@@ -69,6 +72,8 @@ export const useFetch = (
 		case GET_SCHOOLS_FROM_MUNICIPALITY:
 			return usePost(SEP)(schoolsFromMunicipality({ mun: mun, country: country, year: year, isced: isced }) 
 			);
+		case GET_LAU_FROM_NUTS:
+			return usePost(SEP)(lauByNuts({lang: language, nuts3Code: nuts3Code }));  
 		default:
 			return null;
 	}

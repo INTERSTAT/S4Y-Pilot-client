@@ -16,9 +16,10 @@ import Map from './center/map';
 const Service2 = () => {
 	const [lauIt, setLauIt] = useState('');
 	const [lauFr, setLauFr] = useState('');
+	const [nutsIt, setNutsIt] = useState('');
+	const [nutsFr, setNutsFr] = useState('');
 	const [year, setYear] = useState('');
 
-	let municipality = '';
 
 	return (
 		<Grid container spacing={2}>
@@ -56,6 +57,10 @@ const Service2 = () => {
 										setLauIt={setLauIt}
 										lauFr={lauFr}
 										setLauFr={setLauFr} 
+										nutsIt={nutsIt}
+										setNutsIt={setNutsIt}
+										nutsFr={nutsFr}
+										setNutsFr={setNutsFr}
 										year={year}
 										setYear={setYear}
 									/>

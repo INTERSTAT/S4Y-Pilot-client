@@ -8,17 +8,12 @@ import SelectData from 'components/pages/select-data/select-data';
 import {
 	NUTS,
 	LAU,
-	GET_SCHOOL_YEARS
+	GET_SCHOOL_YEARS,
+	GET_LAU_FROM_NUTS
 } from 'api/constants';
 
-// const optionsSchoolYear = [
-// 	{ value: '1', label: '2020' },
-// 	{ value: '2', label: '2019' },
-// 	{ value: '3', label: '2018' },
-// ];
 
-const One = ({ lauIt, setLauIt, lauFr, setLauFr, year, setYear  }) => {
-	//const [types, setTypes] = useState('');
+const One = ({ lauIt, setLauIt, lauFr, setLauFr,  nutsIt, setNutsIt, nutsFr, setNutsFr, year, setYear  }) => {
 
 	return (
 	<>
@@ -41,11 +36,8 @@ const One = ({ lauIt, setLauIt, lauFr, setLauFr, year, setYear  }) => {
 					>
 						Select a French NUTS3 Region
 					</label>
-					{/* <Select style={{ 
-														height: '100%', 
-														width: '90%' }} options={optionsNUTS3French} placeholder="FR101" /> */}
 
-				    <SelectData endpoint={NUTS} country={'FR'} />
+				    <SelectData endpoint={NUTS} country={'FR'} nutsFr={nutsFr} setNutsFr={setNutsFr} />
 
 					<br />
 					<label
@@ -58,9 +50,11 @@ const One = ({ lauIt, setLauIt, lauFr, setLauFr, year, setYear  }) => {
 					>
 						Select a French Municipality:
 					</label>
-					{/* <Select options={optionsMunicipalityF} onChange={HandelChange} /> */}
 
-					 <SelectData endpoint={LAU} lang={'fr'} lauFr={lauFr} setLauFr={setLauFr} />  
+					 {/* <SelectData endpoint={LAU} lang={'fr'} lauFr={lauFr} setLauFr={setLauFr} />   */}
+
+					 <SelectData endpoint={GET_LAU_FROM_NUTS} lang={'fr'} nuts3Code={nutsFr} lauFr={lauFr} setLauFr={setLauFr} /> 
+
 				</div>
 			</Grid>
 
@@ -82,11 +76,8 @@ const One = ({ lauIt, setLauIt, lauFr, setLauFr, year, setYear  }) => {
 					>
 						Select an Italian NUTS3 Region
 					</label>
-					{/* <Select style={{ 
-														height: '100%', 
-														width: '90%' }} options={optionsNUTS3Italian} placeholder="IT101" /> */}
 
-					<SelectData endpoint={NUTS} country={'IT'} />
+					<SelectData endpoint={NUTS} country={'IT'} nutsIt={nutsIt} setNutsIt={setNutsIt}  />
 
 					<br />
 					<label
@@ -100,11 +91,9 @@ const One = ({ lauIt, setLauIt, lauFr, setLauFr, year, setYear  }) => {
 						Select an Italian Municipality
 					</label>
 
-					{/* <Select options={optionsMunicipalityI} placeholder="Torino" /> */}
+					{/* <SelectData endpoint={LAU} lang={'it'} lauIt={lauIt} setLauIt={setLauIt} /> */}
 
-					<SelectData endpoint={LAU} lang={'it'} lauIt={lauIt} setLauIt={setLauIt} />
-
-					
+					<SelectData endpoint={GET_LAU_FROM_NUTS} lang={'it'} nuts3Code={nutsIt} lauIt={lauIt} setLauIt={setLauIt} /> 
 
 
 				</div>

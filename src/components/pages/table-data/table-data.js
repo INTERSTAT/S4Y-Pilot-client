@@ -13,10 +13,11 @@ const customStyles = {
 	},
 	headCells: {
 		style: {
-			fontSize: '15px',
+			fontSize: '13px',
 			fontWeight: '10',
 			textTransform: 'uppercase',
 			paddingLeft: '0 8px',
+			backgroundColor: '#dadeed'
 		},
 	},
 	cells: {
