@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from 'components/common/accordion';
-import Paper from '@mui/material/Paper';
+//import Paper from '@mui/material/Paper';
+import Paper from 'components/common/paper';
 import { SERVICE_2_TITLE, SERVICE_2_DESCRIPTION } from '../data';
 
 const Left = () => (

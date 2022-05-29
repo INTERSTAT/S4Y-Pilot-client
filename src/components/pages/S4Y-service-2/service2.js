@@ -6,7 +6,7 @@ import './service2.css';
 
 import Paper from '@mui/material/Paper';
 import Table from '../table-data';
-import { GET_LAU_AGE_POP, GET_SCHOOLS_ON_TYPE } from 'api/constants';
+import { GET_LAU_AGE_POP, POP_IN_SCHOOL_AGE } from 'api/constants';
 
 import Left from './left';
 import One from './center/one';
@@ -75,6 +75,8 @@ const Service2 = () => {
 						</Grid>
 					</Grid>
 
+					<Grid container spacing={1}>
+						<Grid item xs={12}>
 					<div
 						style={{
 							height: '100%',
@@ -83,78 +85,13 @@ const Service2 = () => {
 							textAlign: 'center',
 						}}
 					>
-						<Title label="Data about Schools and Students" />
+						<Title label="Data about Schools and Students considering resident population in School age" />
 					</div>
-
-					<Grid container spacing={1}>
-						<Grid item xs={6}>
-							<div
-								style={{ height: '100%', width: '100%', textAlign: 'center' }}
-							>
-								<label
-									style={{
-										color: '#545252',
-										fontWeight: 'bold',
-										fontSize: 'large',
-									}}
-								>
-									Public Schools
-								</label>
-							<Paper>
-							<Table
-										endpoint={GET_SCHOOLS_ON_TYPE}
-										mun={lauFr}
-										mun2={lauIt}
-										typology={'Public'}
-										year={year}
-										setYear={setYear}
-									/>
-								{/* <Table endpoint={GET_NUTS_POP3} /> */}
-							</Paper> 
-							</div>
-						</Grid>
-
-						<Grid item xs={6}>
-							<div
-								style={{ height: '100%', width: '100%', textAlign: 'center' }}
-							>
-								<label
-									style={{
-										color: '#545252',
-										fontWeight: 'bold',
-										fontSize: 'large',
-									}}
-								>
-									Private Schools
-								</label>
-								<Paper>
-								<Table
-										endpoint={GET_SCHOOLS_ON_TYPE}
-										mun={lauFr}
-										mun2={lauIt}
-										typology={'Private'}
-										year={year}
-										setYear={setYear}
-									/>
-								{/* <Table endpoint={GET_NUTS_POP2} /> */}
-							</Paper>
-							</div>
-						</Grid>
+					</Grid>
 					</Grid>
 
-					<div
-						style={{
-							height: '100%',
-							width: '100%',
-							paddingTop: '0.5rem',
-							textAlign: 'center',
-						}}
-					>
-						<Title label="Data about resident population" />
-					</div>
-
 					<Grid container spacing={1}>
-						<Grid item xs={6}>
+						<Grid item xs={12}>
 							<div
 								style={{ height: '100%', width: '100%', textAlign: 'center' }}
 							>
@@ -174,19 +111,19 @@ const Service2 = () => {
 										types={types}
 										setTypes={setTypes}
 									/> */}
-									<Table
-										endpoint={GET_LAU_AGE_POP}
+									<Table 
+										endpoint={POP_IN_SCHOOL_AGE}
+										country={'FR'}
 										mun={lauFr}
-										lauIt={lauIt}
-										setLauIt={setLauIt}
-										lauFr={lauFr}
-										setLauFr={setLauFr}
+										year={year}
 									/>
 								</Paper>
 							</div>
 						</Grid>
+					</Grid>
 
-						<Grid item xs={6}>
+					<Grid container spacing={1}>
+					<Grid item xs={12}>
 							<div
 								style={{ height: '100%', width: '100%', textAlign: 'center' }}
 							>
@@ -200,18 +137,19 @@ const Service2 = () => {
 									Italian Territory
 								</label>
 								<Paper>
-									<Table
-										endpoint={GET_LAU_AGE_POP}
+								<Table 
+										endpoint={POP_IN_SCHOOL_AGE}
+										country={'IT'}
 										mun={lauIt}
-										lauIt={lauIt}
-										setLauIt={setLauIt}
-										lauFr={lauFr}
-										setLauFr={setLauFr}
+										year={year}
 									/>
 								</Paper>
 							</div>
 						</Grid>
-					</Grid>
+						</Grid>
+
+
+
 				</Stack>
 			</Grid>
 		</Grid>

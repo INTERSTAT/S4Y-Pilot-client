@@ -1,4 +1,5 @@
-export const numberSchools = ({ mun, country, year }) =>  `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+export const numberSchools = ({ mun, country, year }) =>  `
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 PREFIX S4Y: <http://www.istat.it/S4Y>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>

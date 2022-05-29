@@ -6,7 +6,10 @@ const StyledPaperInterstat = styled(Paper)(({ theme }) => ({
 	padding: theme.spacing(1),
 	color: theme.palette.text.secondary,
 	borderRadius: 25,
-	fontSize: 12,
+	fontSize: 15,
+	fontFamily: 'sans-serif',
+	paddingLeft: '2em',
+	paddingRight: '2em'
 }));
 
 const PaperInterstat = ({ children }) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from 'components/common/accordion';
-import Paper from '@mui/material/Paper';
+//import Paper from '@mui/material/Paper';
+import Paper from 'components/common/paper';
 import { SERVICE_1_TITLE, SERVICE_1_DESCRIPTION } from '../data';
 
 const Left = () => (
@@ -13,7 +14,7 @@ const Left = () => (
 				<strong>{SERVICE_1_TITLE}</strong>
 			</Accordion>
 		</div>
-		<Paper style={{ paddingLeft: '1em' }}>{SERVICE_1_DESCRIPTION}</Paper>
+		<Paper >{SERVICE_1_DESCRIPTION}</Paper>
 	</>
 );
 

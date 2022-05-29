@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import 'leaflet/dist/leaflet.css';
 import SelectData from 'components/pages/select-data';
-import { LAU, GET_SCHOOL_YEARS, GET_COUNTRIES, GET_ISCED } from 'api/constants';
+import { GET_SCHOOL_YEARS, GET_COUNTRIES, GET_ISCED, GET_LAU_FROM_NUTS, NUTS } from 'api/constants';
 
 // const optionsCountry = [
 // 	{ value: '1', label: 'Italy' },
@@ -34,15 +34,16 @@ const Selection = ({
 	setIsced,
 	mun,
 	setMun,
+	nuts,
+	setNuts,
 	year,
 	setYear,
 }) => {
 
 	return (
 	<>
-		<Grid container spacing={2}>
-			<Grid item xs={6}>
-				<div style={{ height: '100%', width: '100%' }}>
+		<Grid container spacing={1}>
+		<div style={{ height: '100%', width: '100%', paddingRight: '0.8rem',  paddingLeft: '0.8rem' }}>
 					<label
 						style={{ color: 'black', fontWeight: 'bold', fontSize: 'small' }}
 					>
@@ -51,6 +52,16 @@ const Selection = ({
 					{/* <Select options={optionsCountry} placeholder="Italy" /> */}
 
 					<SelectData endpoint={GET_COUNTRIES} country={country} setCountry={setCountry} />
+				</div>
+			<Grid item xs={6}>
+			<div style={{ height: '100%', width: '100%' }}>
+			<label
+						style={{ color: 'black', fontWeight: 'bold', fontSize: 'small' }}
+					>
+						Select a French NUTS3 Region
+					</label>
+
+				    <SelectData endpoint={NUTS} country={country} nuts={nuts} setNuts={setNuts} type={'service1'} />
 
 					<br />
 					<label
@@ -64,14 +75,16 @@ const Selection = ({
 						Select a Municipality
 					</label>
 
-					{/* <SelectData endpoint={LAU} lang={'it'} mun={mun} setMun={setMun} /> */}
-					<SelectData endpoint={LAU} lang={country}  mun={mun} setMun={setMun} />  
+					{/* <SelectData endpoint={LAU} lang={country}  mun={mun} setMun={setMun} />   */}
+					<SelectData endpoint={GET_LAU_FROM_NUTS} lang={country} nuts={nuts}  mun={mun} setMun={setMun} type={'service1'} /> 
 
 				</div>
+
+
 			</Grid>
 
 			<Grid item xs={6}>
-				<div style={{ height: '100%', width: '100%' }}>
+				<div style={{ height: '100%', width: '100%', paddingRight: '1rem'}}>
 					<label
 						style={{ color: 'black', fontWeight: 'bold', fontSize: 'small' }}
 					>

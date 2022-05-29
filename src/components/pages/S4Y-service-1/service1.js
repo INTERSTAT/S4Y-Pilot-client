@@ -19,6 +19,7 @@ const Service1 = () => {
 	const [country, setCountry] = useState('');
 	const [isced, setIsced] = useState('');
 	const [mun, setMun] = useState('');
+	const [nuts, setNuts] = useState('');
 	const [year, setYear] = useState('');
 
 	return (
@@ -35,6 +36,8 @@ const Service1 = () => {
 					setIsced={setIsced}
 					mun={mun}
 					setMun={setMun}
+					nuts={nuts}
+				    setNuts={setNuts}
 					year={year}
 					setYear={setYear}
 				/>

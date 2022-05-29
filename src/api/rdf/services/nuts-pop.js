@@ -13,7 +13,8 @@ import {
 	countries,
 	iscedValues,
 	schoolsFromMunicipality,
-	lauByNuts
+	lauByNuts,
+	popInSchoolAge
 } from '../queries';
 
 import {
@@ -29,7 +30,8 @@ import {
 	GET_COUNTRIES,
 	GET_ISCED,
 	GET_SCHOOLS_FROM_MUNICIPALITY,
-	GET_LAU_FROM_NUTS
+	GET_LAU_FROM_NUTS,
+	POP_IN_SCHOOL_AGE
 } from 'api/constants';
 
 export const useFetch = (
@@ -73,7 +75,9 @@ export const useFetch = (
 			return usePost(SEP)(schoolsFromMunicipality({ mun: mun, country: country, year: year, isced: isced }) 
 			);
 		case GET_LAU_FROM_NUTS:
-			return usePost(SEP)(lauByNuts({lang: language, nuts3Code: nuts3Code }));  
+			return usePost(SEP)(lauByNuts({lang: language.toLowerCase(), nuts3Code: nuts3Code }));  
+		case POP_IN_SCHOOL_AGE:
+			return usePost(SEP)(popInSchoolAge({country: country, mun: mun, year: year }));  
 		default:
 			return null;
 	}

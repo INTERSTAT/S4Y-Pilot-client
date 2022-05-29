@@ -14,7 +14,7 @@ export const sparqlDataToTable = (res) => {
 			{}
 		)
 	);
-	console.log('DATA:');
-	console.log(data);
+	//console.log('DATA:');
+	//console.log(data);
 	return { columns, data };
 };

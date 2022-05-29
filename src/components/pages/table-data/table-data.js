@@ -8,7 +8,7 @@ import { sparqlDataToTable } from 'utils';
 const customStyles = {
 	rows: {
 		style: {
-			minHeight: '10px',
+			minHeight: '30px',
 		},
 	},
 	headCells: {
@@ -24,13 +24,18 @@ const customStyles = {
 		style: {
 			fontSize: '15px',
 			paddingLeft: '0 8px',
+			
+		},
+	},
+	columns: {
+		style: {
+			minHeight: '10px',
 		},
 	},
 };
 
-
 const Table = ({ endpoint, mun, mun2, typology, year,  types, setTypes, country, isced  }) => {
-	const { data, error, loading } = useFetch(endpoint, mun, country, '', mun2, typology, year, isced  );
+	const { data, error, loading } = useFetch(endpoint, mun, country, '', mun2, typology, year, isced, ''  );
 
 	if (loading) return <Loader />;
 	if (error) return <Error message={error.toString()} />;
@@ -44,6 +49,7 @@ const Table = ({ endpoint, mun, mun2, typology, year,  types, setTypes, country,
 			data={tableData}
 			customStyles={customStyles}
 			pagination
+			//expandableRows 
 		/>
 	);
 };

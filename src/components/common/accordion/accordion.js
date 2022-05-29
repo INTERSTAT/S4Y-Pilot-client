@@ -8,12 +8,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const InterstatAccordion = ({ title, children }) => (
 	<div>
 		<Accordion elevation={8}>
-			<AccordionSummary
-				expandIcon={<ExpandMoreIcon />}
+			<AccordionSummary style ={{paddingLeft: '2em',  paddingRight: '2em', color: '#6b718f'}}
+				//expandIcon={<ExpandMoreIcon />}
 				aria-controls="panel1a-content"
 				id="panel1a-header"
 			>
-				<Typography>{title}</Typography>
+				<Typography style={{fontSize: 18, fontFamily: 'serif', fontWeight: 'bold' }}>{title}</Typography>
 			</AccordionSummary>
 			<AccordionDetails>
 				<Typography>{children}</Typography>

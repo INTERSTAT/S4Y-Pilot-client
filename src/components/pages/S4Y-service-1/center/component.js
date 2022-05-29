@@ -18,6 +18,8 @@ const Center = ({
 	setIsced,
 	mun,
 	setMun,
+	nuts,
+	setNuts,
 	year,
 	setYear,
 }) => {
@@ -49,6 +51,8 @@ const Center = ({
 							setIsced={setIsced}
 							mun={mun}
 							setMun={setMun}
+							nuts={nuts}
+							setNuts={setNuts}
 							year={year}
 							setYear={setYear}
 						/>

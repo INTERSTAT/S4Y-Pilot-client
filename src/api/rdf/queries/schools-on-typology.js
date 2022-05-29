@@ -1,4 +1,5 @@
-export const schoolsOnType = ({ typology, year, mun, mun2 }) => `PREFIX qb: <http://purl.org/linked-data/cube#> 
+export const schoolsOnType = ({ typology, year, mun, mun2 }) => `
+PREFIX qb: <http://purl.org/linked-data/cube#> 
 PREFIX sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> 
 PREFIX isc: <http://id.cef-interstat.eu/sc/> 
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
