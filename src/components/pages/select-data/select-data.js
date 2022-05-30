@@ -27,7 +27,9 @@ const SelectData = ({
 	setIsced,
 	mun,
 	setMun,
-	type
+	type,
+	lauCode, 
+	setLauCode 
 }) => {
 
 	if(endpoint === 'GET_LAU_FROM_NUTS' && type==='service1'){
@@ -39,11 +41,19 @@ const SelectData = ({
 			console.log(obj.label);
 			setLauIt(obj.label);
 			console.log(JSON.stringify(lauIt));
+
+			setLauCode(obj.lauCode);
+			console.log("LAU CODE SELEZIONATO: " + lauCode);
+			console.log(JSON.stringify(lauCode));
 		}
 		if (lang === 'fr') {
 			console.log(obj.label);
 			setLauFr(obj.label);
 			console.log(JSON.stringify(lauFr));
+
+			setLauCode(obj.lauCode);
+			console.log("LAU CODE SELEZIONATO: " + lauCode);
+			console.log(JSON.stringify(lauCode));
 		}
 		if (lang === 'IT') {
 			console.log(obj.label);

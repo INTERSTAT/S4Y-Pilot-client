@@ -21,6 +21,7 @@ const Service1 = () => {
 	const [mun, setMun] = useState('');
 	const [nuts, setNuts] = useState('');
 	const [year, setYear] = useState('');
+	const [lauCode, setLauCode] = useState('');
 
 	return (
 		<Grid container spacing={2}>
@@ -40,6 +41,8 @@ const Service1 = () => {
 				    setNuts={setNuts}
 					year={year}
 					setYear={setYear}
+					lauCode={lauCode}
+					setLauCode={setLauCode}
 				/>
 
 				<Stack spacing={1} style={{ height: '100%', width: '100%' }}>

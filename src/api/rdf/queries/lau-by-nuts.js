@@ -3,11 +3,12 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX isc: <http://id.cef-interstat.eu/sc/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?label ?nuts3Code WHERE { 
+SELECT DISTINCT ?label ?nuts3Code ?lauCode WHERE { 
     ?obs qb:dataSet isc:ds1 ; 
          isc:dim-lau ?lauURI ;
          isc:att-nuts3 ?nuts3 . 
     ?lauURI skos:prefLabel ?label . 
+    ?lauURI skos:notation ?lauCode .
     ?nuts3 skos:notation '` + nuts3Code +`' . 
     
     FILTER (lang(?label) = '` + lang +`').

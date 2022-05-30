@@ -24,12 +24,13 @@ const customStyles = {
 		style: {
 			fontSize: '15px',
 			paddingLeft: '0 8px',
+			width: '250px'
 			
 		},
 	},
 	columns: {
 		style: {
-			minHeight: '10px',
+			minHeight: '10px'
 		},
 	},
 };
@@ -45,6 +46,8 @@ const Table = ({ endpoint, mun, mun2, typology, year,  types, setTypes, country,
 
 	return (
 		<DataTable
+			striped={true}
+			highlightOnHover={true}
 			columns={columns}
 			data={tableData}
 			customStyles={customStyles}

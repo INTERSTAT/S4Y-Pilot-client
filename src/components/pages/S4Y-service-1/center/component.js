@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Selection from '../right/selection';
 import { GET_NUMBER_SCHOOLS } from 'api/constants';
 import Map from './map';
+//import Map from './interactive-map/fetcher';
 import Value from './value';
 
 const Center = ({
@@ -22,12 +23,15 @@ const Center = ({
 	setNuts,
 	year,
 	setYear,
+	lauCode, 
+	setLauCode
 }) => {
 	return (
 		<>
 			<Grid container spacing={2}>
 				<Grid item xs={6}>
 					<div style={{ height: '100%', width: '100%' }}>
+						{/* <Map /> */}
 						<Map />
 					</div>
 				</Grid>
@@ -55,10 +59,13 @@ const Center = ({
 							setNuts={setNuts}
 							year={year}
 							setYear={setYear}
+							lauCode={lauCode}
+							setLauCode={setLauCode}
 						/>
 
 						<div style={{ paddingLeft: '5rem', textAlign: 'center' }}>
 							<Title label="Total number of Schools in the selected municipality" />
+							{/* <label style={{textAlign: 'center', color:'#9ba4cf', fontSize: '1rem' }}>considering the Public and Private schools of all ISCED levels</label> */}
 						</div>
 
 						<Value

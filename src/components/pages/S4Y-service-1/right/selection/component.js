@@ -38,6 +38,8 @@ const Selection = ({
 	setNuts,
 	year,
 	setYear,
+	lauCode, 
+	setLauCode 
 }) => {
 
 	return (
@@ -76,7 +78,7 @@ const Selection = ({
 					</label>
 
 					{/* <SelectData endpoint={LAU} lang={country}  mun={mun} setMun={setMun} />   */}
-					<SelectData endpoint={GET_LAU_FROM_NUTS} lang={country} nuts={nuts}  mun={mun} setMun={setMun} type={'service1'} /> 
+					<SelectData endpoint={GET_LAU_FROM_NUTS} lang={country} nuts={nuts}  mun={mun} setMun={setMun} type={'service1'} lauCode={lauCode} setLauCode={setLauCode} /> 
 
 				</div>
 
