@@ -42,18 +42,18 @@ const SelectData = ({
 			setLauIt(obj.label);
 			console.log(JSON.stringify(lauIt));
 
-			setLauCode(obj.lauCode);
-			console.log("LAU CODE SELEZIONATO: " + lauCode);
-			console.log(JSON.stringify(lauCode));
+			// setLauCode(obj.lauCode);
+			// console.log("LAU CODE SELEZIONATO: " + lauCode);
+			// console.log(JSON.stringify(lauCode));
 		}
 		if (lang === 'fr') {
 			console.log(obj.label);
 			setLauFr(obj.label);
 			console.log(JSON.stringify(lauFr));
 
-			setLauCode(obj.lauCode);
-			console.log("LAU CODE SELEZIONATO: " + lauCode);
-			console.log(JSON.stringify(lauCode));
+			// setLauCode(obj.lauCode);
+			// console.log("LAU CODE SELEZIONATO: " + lauCode);
+			// console.log(JSON.stringify(lauCode));
 		}
 		if (lang === 'IT') {
 			console.log(obj.label);

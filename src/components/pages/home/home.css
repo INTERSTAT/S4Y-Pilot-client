@@ -6,9 +6,10 @@
 }
 
 .Framework-link{
-  font-size: 15px;
-  color: #6ac5de;
+  font-size: 18px;
+  color: #bac1e6;
   font-weight: bold;
+  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

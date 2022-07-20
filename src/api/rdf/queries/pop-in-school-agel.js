@@ -33,8 +33,8 @@ SELECT distinct ?nuts3Code (str(?mun) as ?municipality)
     	S4Y:number_of_schools ?nsc .
     
     FILTER ((lang(?mun) = 'it') || (lang(?mun) = 'fr')).
-    FILTER (lang(?age) = 'en').
-    FILTER (lang(?gender) = 'en').
+    #FILTER (lang(?age) = 'en').
+    #FILTER (lang(?gender) = 'en').
     FILTER((str(?age) = 'under 5 years') || (str(?age) = '5 to 9 years') || (str(?age) = '10 to 14 years') || (str(?age) = '15 to 19 years')) .
 
     FILTER (str(?mun)='` + mun +`').

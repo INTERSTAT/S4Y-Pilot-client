@@ -9,11 +9,11 @@ SELECT ?nutsLabel ?sex (sum(?pop) AS ?population) WHERE {
          isc:dim-sex ?sexURI ;
          isc:att-nuts3 ?nuts3 .
     ?nuts3 skos:prefLabel ?nutsLabel .
-    ?nuts3 skos:notation ?nuts3Code .
+    ?nuts3 skos:notation ?nuts3Code .        
     ?sexURI skos:prefLabel ?sex .
     
     FILTER (regex (?nuts3Code , "^(IT)")).
-  	FILTER (lang(?sex) = 'en').
+    #FILTER (lang(?sex) = 'en').
     
 }
 GROUP BY ?nutsLabel ?sex

@@ -19,9 +19,13 @@ SELECT DISTINCT ?municipality ?municipality_Code (str(?nuts) as ?nuts3) ?nuts3_C
      ?ageClassURI skos:prefLabel ?age .
      
      #FILTER ((lang(?municipality) = 'it') || (lang(?municipality) = 'fr')).
-     FILTER (lang(?age) = 'en').
-     FILTER (lang(?gender) = 'en').
+     #FILTER (lang(?age) = 'en').
+     #FILTER (lang(?gender) = 'en').
+
      FILTER (str(?municipality)='` + mun +`').
+
+     filter contains(lcase(str(?gender)), "male") .
+     filter contains(str(?age), "years") .
  }
  #GROUP BY ?municipality ?nuts3_Code ?municipality_Code ?age ?gender
  ORDER BY DESC(?pop)

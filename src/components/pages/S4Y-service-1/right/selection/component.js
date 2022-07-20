@@ -60,7 +60,7 @@ const Selection = ({
 			<label
 						style={{ color: 'black', fontWeight: 'bold', fontSize: 'small' }}
 					>
-						Select a French NUTS3 Region
+						Select a NUTS3 Region
 					</label>
 
 				    <SelectData endpoint={NUTS} country={country} nuts={nuts} setNuts={setNuts} type={'service1'} />

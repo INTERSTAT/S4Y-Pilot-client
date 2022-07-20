@@ -7,7 +7,7 @@ SELECT DISTINCT ?label WHERE {
          isc:dim-lau ?lauURI . 
     ?lauURI skos:prefLabel ?label .
     
-    FILTER (lang(?label) = '` + lang +`').
+    #FILTER (lang(?label) = '` + lang +`').
 } 
 #ORDER BY ?label
 LIMIT 1000
