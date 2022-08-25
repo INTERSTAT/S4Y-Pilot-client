@@ -1,4 +1,4 @@
-import { usePost, SEP, GF } from '../utils';
+import { usePost, SEP, GF, S4Y } from '../utils';
 import { extractValues } from '../utils/transformers';
 
 import {
@@ -50,7 +50,6 @@ export const useFetch = (
 	isced,
 	nuts3Code,
 	lauCode
-
 ) => {
 	switch (constant) {
 		case GET_NUTS_POP:
@@ -70,24 +69,24 @@ export const useFetch = (
 				schoolsOnType({ typology: typology, year: year, mun: mun, mun2: mun2 })
 			);
 		case GET_SCHOOL_YEARS:
-			return usePost(SEP)(schoolYears);
+			return usePost(S4Y)(schoolYears);
 		case GET_NUMBER_SCHOOLS:
-			return usePost(SEP)(numberSchools({ mun: mun, country: country, year: year }) 
+			return usePost(S4Y)(numberSchools({ mun: mun, lauCode: lauCode, country: country, year: year }) 
 			); 
 		case GET_NUMBER_SCHOOLS_BY_TYPE:
-			return usePost(SEP)(numberSchoolsByType({ country: country, year: year, type: typology }) 
+			return usePost(S4Y)(numberSchoolsByType({ country: country, year: year, type: typology, lauCode: lauCode }) 
 			); 
 		case GET_COUNTRIES:
-			return usePost(SEP)(countries);
+			return usePost(S4Y)(countries);
 		case GET_ISCED:
-			return usePost(SEP)(iscedValues);
+			return usePost(S4Y)(iscedValues);
 		case GET_SCHOOLS_FROM_MUNICIPALITY:
-			return usePost(SEP)(schoolsFromMunicipality({ mun: mun, country: country, year: year, isced: isced }) 
+			return usePost(S4Y)(schoolsFromMunicipality({ mun: mun, lauCode: lauCode, country: country, year: year, isced: isced }) 
 			);
 		case GET_LAU_FROM_NUTS:
 			return usePost(SEP)(lauByNuts({lang: language.toLowerCase(), nuts3Code: nuts3Code }));  
 		case POP_IN_SCHOOL_AGE:
-			return usePost(SEP)(popInSchoolAge({country: country, mun: mun, year: year }));  
+			return usePost(S4Y)(popInSchoolAge({country: country, mun: mun, year: year, endpointSEP: SEP, endpointS4Y: S4Y  }));  
 		case POINT_FROM_LAUCODE:
 			return extractValues(usePost(GF)(lauCodePoint({ lauCode: lauCode }))); 
 		default:

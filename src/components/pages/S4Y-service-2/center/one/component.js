@@ -24,6 +24,10 @@ const One = ({
 	setNutsFr,
 	year,
 	setYear,
+	lauItCode, 
+	setLauItCode,
+	lauFrCode, 
+	setLauFrCode 
 }) => {
 	return (
 		<>
@@ -74,6 +78,8 @@ const One = ({
 							nuts3Code={nutsFr}
 							lauFr={lauFr}
 							setLauFr={setLauFr}
+							lauFrCode={lauFrCode}
+							setLauFrCode={setLauFrCode}
 						/>
 					</div>
 				</Grid>
@@ -124,6 +130,8 @@ const One = ({
 							nuts3Code={nutsIt}
 							lauIt={lauIt}
 							setLauIt={setLauIt}
+							lauItCode={lauItCode}
+							setLauItCode={setLauItCode}
 						/>
 					</div>
 				</Grid>
@@ -173,6 +181,7 @@ const One = ({
 							country={'FR'}
 							year={year}
 							typology={'Public'}
+							lauCode={lauFrCode}
 						></Value>
 						<br />
 
@@ -191,6 +200,7 @@ const One = ({
 							country={'FR'}
 							year={year}
 							typology={'Private'}
+							lauCode={lauFrCode}
 						></Value>
 						<br />
 					</div>
@@ -213,6 +223,7 @@ const One = ({
 							country={'IT'}
 							year={year}
 							typology={'Public'}
+							lauCode={lauItCode}
 						></Value>
 
 						<br />
@@ -231,6 +242,7 @@ const One = ({
 							country={'IT'}
 							year={year}
 							typology={'Private'}
+							lauCode={lauItCode}
 						></Value>
 					</div>
 				</Grid>

@@ -63,6 +63,7 @@ const Service1 = () => {
 							<Table
 								endpoint={GET_SCHOOLS_FROM_MUNICIPALITY}
 								mun={mun}
+								lauCode={lauCode}
 								setMun={setMun}
 								country={country}
 								year={year}

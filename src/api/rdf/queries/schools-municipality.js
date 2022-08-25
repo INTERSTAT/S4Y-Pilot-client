@@ -1,4 +1,5 @@
-export const schoolsFromMunicipality = ({ mun, country, year, isced }) =>  `PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+export const schoolsFromMunicipality = ({ mun, lauCode, country, year, isced }) =>  `
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 PREFIX S4Y: <http://www.istat.it/S4Y>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -14,14 +15,15 @@ SELECT ?municipality ?School_type (xsd:integer(?nsc) as ?N_schools) (xsd:integer
         S4Y:number_of_students ?nst;
     	S4Y:number_of_schools ?nsc .
     
-     ?a rdf:type skos:Concept .
-     ?a skos:prefLabel ?municipality . 
-     ?a skos:notation ?lauCode . 
-
-    #FILTER ((lang(?municipality) = 'it') || (lang(?municipality) = 'fr')). 
-    FILTER (str(?municipality)='` + mun + `').
-    FILTER (?c='` + country + `').
-    FILTER (?y='` + year + `').
-    FILTER (?isced='` + isced + `').
+     #?a rdf:type skos:Concept .
+     #?a skos:prefLabel ?municipality . 
+     #?a skos:notation ?lauCode . 
+    #FILTER (str(?municipality)='` + mun + `').
+    
+    FILTER (str(?lauCode)='` + lauCode + `') .
+    FILTER (?c='` + country + `') .
+    FILTER (?y='` + year + `') .
+    FILTER (?isced='` + isced + `') .
+    BIND('` + mun + `' as ?municipality) .
 } 
 `;

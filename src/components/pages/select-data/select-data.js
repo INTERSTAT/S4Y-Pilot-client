@@ -29,7 +29,11 @@ const SelectData = ({
 	setMun,
 	type,
 	lauCode, 
-	setLauCode 
+	setLauCode,
+	lauItCode, 
+	setLauItCode,
+	lauFrCode, 
+	setLauFrCode 
 }) => {
 
 	if(endpoint === 'GET_LAU_FROM_NUTS' && type==='service1'){
@@ -37,35 +41,44 @@ const SelectData = ({
 	}
 
 	const handleChange = (obj) => {
+		console.log("IN HANDLE CHANGE, lang: " + lang);
 		if (lang === 'it') {
 			console.log(obj.label);
 			setLauIt(obj.label);
 			console.log(JSON.stringify(lauIt));
 
-			// setLauCode(obj.lauCode);
-			// console.log("LAU CODE SELEZIONATO: " + lauCode);
-			// console.log(JSON.stringify(lauCode));
+			setLauItCode(obj.lauCode);
+			console.log("LAU CODE IT SELEZIONATO: " + lauItCode);
+			console.log(JSON.stringify(lauItCode));
 		}
 		if (lang === 'fr') {
 			console.log(obj.label);
 			setLauFr(obj.label);
 			console.log(JSON.stringify(lauFr));
 
-			// setLauCode(obj.lauCode);
-			// console.log("LAU CODE SELEZIONATO: " + lauCode);
-			// console.log(JSON.stringify(lauCode));
+			setLauFrCode(obj.lauCode);
+			console.log("LAU CODE FR SELEZIONATO: " + lauFrCode);
+			console.log(JSON.stringify(lauFrCode));
 		}
 		if (lang === 'IT') {
 			console.log(obj.label);
 			console.log('MUN:');
 			setMun(obj.label);
 			console.log(JSON.stringify(mun));
+
+			setLauCode(obj.lauCode);
+			console.log("LAU CODE SELEZIONATO: " + lauCode);
+			console.log(JSON.stringify(lauCode));
 		}
 		if (lang === 'FR') {
 			console.log(obj.label);
 			console.log('MUN:');
 			setMun(obj.label);
 			console.log(JSON.stringify(mun));
+
+			setLauCode(obj.lauCode);
+			console.log("LAU CODE SELEZIONATO: " + lauCode);
+			console.log(JSON.stringify(lauCode));
 		}
 		if (endpoint === 'GET_SCHOOL_YEARS') {
 			setYear(obj.label);

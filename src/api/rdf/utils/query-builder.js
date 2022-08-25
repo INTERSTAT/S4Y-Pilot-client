@@ -6,7 +6,7 @@ export const usePost = (endpoint) => (query) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		endpoint = 'https://interstat.eng.it/graphdb/repositories/sep-test';
+		//endpoint = 'https://interstat.eng.it/graphdb/repositories/sep-test';
 		const url = `${endpoint}`;
 		fetch(url, {
 			method: 'POST',

@@ -3,8 +3,8 @@ import Loader from 'components/common/loader';
 import Error from 'components/common/error';
 import { useFetch } from 'api';
 
-const Value = ({ endpoint, country, mun, year }) => {
-	const { data, error, loading } = useFetch(endpoint, mun, country, '', '', '', year, '');
+const Value = ({ endpoint, country, mun, year, lauCode }) => {
+	const { data, error, loading } = useFetch(endpoint, mun, country, '', '', '', year, '', '', lauCode);
 
 	if (loading) return <Loader />;
 	if (error) return <Error message={error.toString()} />;

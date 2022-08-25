@@ -1,4 +1,4 @@
-export const numberSchools = ({ mun, country, year }) =>  `
+export const numberSchools = ({ mun, lauCode, country, year }) =>  `
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
 PREFIX S4Y: <http://www.istat.it/S4Y>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -15,16 +15,15 @@ SELECT (xsd:integer(sum(?nsc)) as ?schools) ?lauCode ?municipality  WHERE {
         S4Y:number_of_students ?nst;
     	S4Y:number_of_schools ?nsc .
     
-     ?a rdf:type skos:Concept .
-     ?a skos:prefLabel ?municipality . 
-     ?a skos:notation ?lauCode . 
+     #?a rdf:type skos:Concept .
+     #?a skos:prefLabel ?municipality . 
+     #?a skos:notation ?lauCode . 
 
-    #FILTER ((lang(?municipality) = 'it') || (lang(?municipality) = 'fr')). 
-    #FILTER (str(?municipality)='Cannes').
-    FILTER (str(?municipality)='` + mun + `').
+    #FILTER (str(?municipality)='` + mun + `').
+
+    FILTER (str(?lauCode)='` + lauCode + `').
     FILTER (?c='` + country + `').
     FILTER (?y='` + year + `').
-    #FILTER (?isc='').
 } 
 GROUP BY ?lauCode ?municipality 
 `;

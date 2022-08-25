@@ -1,4 +1,4 @@
-export const popInSchoolAge = ({ country, mun, year  }) => `
+export const popInSchoolAge = ({ country, mun, year, endpointSEP, endpointS4Y  }) => `
 PREFIX qb: <http://purl.org/linked-data/cube#> 
 PREFIX sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> 
 PREFIX isc: <http://id.cef-interstat.eu/sc/> 
@@ -8,6 +8,7 @@ PREFIX S4Y: <http://www.istat.it/S4Y>
 SELECT distinct ?nuts3Code (str(?mun) as ?municipality)
 (xsd:integer(?nsc) as ?N_schools) ?type (xsd:integer(?nst) as ?N_students) (?isc as ?isced) ?age (xsd:integer(sum(?pop)) AS ?population)  WHERE { 
  
+ SERVICE <` + endpointSEP +`> {
  #POPULATION
      ?obs qb:dataSet isc:ds1 ;
          sdmx-measure:obsValue ?pop ;
@@ -20,7 +21,12 @@ SELECT distinct ?nuts3Code (str(?mun) as ?municipality)
     ?ageClassURI skos:prefLabel ?age .
     ?lauURI skos:prefLabel ?mun .
     ?lauURI skos:notation ?lau_Code.
+    
+    FILTER((str(?age) = 'under 5 years') || (str(?age) = '5 to 9 years') || (str(?age) = '10 to 14 years') || (str(?age) = '15 to 19 years')) .
+    FILTER (str(?mun)='` + mun +`').
+    }
  
+  #SERVICE <` + endpointS4Y +`> {
   #SCHOOLS 
         ?g a S4Y:V_group_attendance;
         S4Y:isced_school_code ?isc;
@@ -31,15 +37,10 @@ SELECT distinct ?nuts3Code (str(?mun) as ?municipality)
         S4Y:is_Public_school ?type ;
         S4Y:number_of_students ?nst;
     	S4Y:number_of_schools ?nsc .
-    
-    FILTER ((lang(?mun) = 'it') || (lang(?mun) = 'fr')).
-    #FILTER (lang(?age) = 'en').
-    #FILTER (lang(?gender) = 'en').
-    FILTER((str(?age) = 'under 5 years') || (str(?age) = '5 to 9 years') || (str(?age) = '10 to 14 years') || (str(?age) = '15 to 19 years')) .
-
-    FILTER (str(?mun)='` + mun +`').
-    FILTER (str(?c)='` + country +`').
-    FILTER(?isc > "3" ) . 
+        
+        FILTER (str(?c)='` + country +`').
+    	FILTER(?isc > "3" ) . 
+    #}
     
     BIND( IF(contains(?isc, "0"), (str(?age) = 'under 5 years'), str(?age) ) AS ?condition1).
     BIND( IF(contains(?isc, "1"), (str(?age) = '5 to 9 years'), str(?age) ) AS ?condition2).
