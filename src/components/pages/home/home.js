@@ -11,7 +11,7 @@ const HomePage = () => (
 		<p>INTERSTAT School for you pilot application</p>
 		<a
 			className="Framework-link"
-			href="https://interstat.eng.it/"
+			href="https://framework.cef-interstat.eu/"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
